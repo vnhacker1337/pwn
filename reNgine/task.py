@@ -526,7 +526,7 @@ def doScan(domain_id, scan_history_id, scan_type, engine_type):
                     severity = yaml_configuration['vulnerability_scan']['severity'].replace(
                         " ", "")
                     # Update nuclei command based on severity
-                    nuclei_command = nuclei_command + ' -severity ' + severity
+                    nuclei_command = nuclei_command + ' -severity ' + severity + " -c 40"
 
             # update nuclei templates before running scan
             os.system('nuclei -update-templates')
